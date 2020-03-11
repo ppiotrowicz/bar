@@ -26,19 +26,25 @@ const render = ({ config, output, error, side, data }) => {
   let workspaces = (
     <span style={style}>
       <span style={spaceStyle(1, data)}>
-        <i className="fa fa-terminal"></i>
+        <i className="fab fa-slack-hash"> Slack</i>
       </span>
       <span style={spaceStyle(2, data)}>
-        <i className="fab fa-firefox"></i>
+        <i className="fa fa-envelope"> Mail</i>
       </span>
       <span style={spaceStyle(3, data)}>
-        <i className="fab fa-slack-hash"></i>
+        <i className="fab fa-firefox"> Web</i>
       </span>
       <span style={spaceStyle(4, data)}>
-        <i className="fab fa-spotify"></i>
+        <i className="far fa-window-restore"> Random</i>
       </span>
       <span style={spaceStyle(5, data)}>
-        <i className="far fa-calendar"></i>
+        <i className="far fa-code"> Emacs</i>
+      </span>
+      <span style={spaceStyle(6, data)}>
+        <i className="fa fa-terminal"> Term</i>
+      </span>
+      <span style={spaceStyle(7, data)}>
+        <i className="fab fa-spotify"> Spotify</i>
       </span>
     </span>
   )
