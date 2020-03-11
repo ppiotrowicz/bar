@@ -42,8 +42,8 @@ const barStyle = {
   overflow: 'hidden',
   color: theme.text,
   height: '25px',
-  fontFamily: 'Helvetica',
-  fontSize: '.9rem',
+  fontFamily: 'Iosevka',
+  fontSize: '12px',
   boxShadow: '0px 2px 5px 0 #000000',
 }
 
