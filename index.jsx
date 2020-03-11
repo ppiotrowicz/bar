@@ -13,10 +13,10 @@ import {
 
 const config = {
   time: {
-    format: "%l:%M",
+    date_format: "%b %d",
+    time_format: "%H:%M",
     style: {
-      padding: '0 15px',
-      backgroundColor: theme.backgroundLight,
+      padding: '0 15px'
     }
   },
   battery: {
@@ -89,8 +89,8 @@ export const render = ({ output, error }) => {
 
       <Playing config={config.playing} data={result(output, "playing")} />
 
-      <Time config={config.time} side="right"></Time>
       <Battery config={config.battery} data={result(output, "battery")} side="right" />
+      <Time config={config.time} side="right"></Time>
     </div>
   )
   return error ? errorContent : content
