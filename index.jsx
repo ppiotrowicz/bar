@@ -43,7 +43,7 @@ const barStyle = {
   color: theme.text,
   height: '25px',
   fontFamily: 'Iosevka',
-  fontSize: '12px',
+  fontSize: '13px',
   boxShadow: '0px 2px 5px 0 #000000',
 }
 

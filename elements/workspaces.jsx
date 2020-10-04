@@ -7,6 +7,10 @@ const render = ({ config, output, error, side, data }) => {
     float: side,
   }
 
+  var iconStyle = {
+    padding: '0 4px'
+  }
+
   var spaceStyle = (position, space) => {
     var style = {
       height: "23px",
@@ -14,7 +18,7 @@ const render = ({ config, output, error, side, data }) => {
       padding: '0 8px'
     }
     if (position == parseInt(space)) {
-      style.borderBottom = '2px solid #c678dd'
+      style.borderBottom = '2px solid #5699af'
     }
     return style
   }
@@ -26,34 +30,30 @@ const render = ({ config, output, error, side, data }) => {
   let workspaces = (
     <span style={style}>
       <span style={spaceStyle(1, data)}>
-        <i className="fab fa-slack-hash"> Slack</i>
+        <i className="fab fa-slack-hash" style={iconStyle}></i>
       </span>
       <span style={spaceStyle(2, data)}>
-        <i className="fa fa-envelope"> Mail</i>
+        <i className="fa fa-envelope" style={iconStyle}></i>
       </span>
       <span style={spaceStyle(3, data)}>
-        <i className="fab fa-firefox"> Web</i>
+        <i className="fab fa-firefox" style={iconStyle}></i>
       </span>
       <span style={spaceStyle(4, data)}>
-        <i className="far fa-window-restore"> Random</i>
+        <i className="far fa-window-restore" style={iconStyle}></i>
       </span>
       <span style={spaceStyle(5, data)}>
-        <i className="far fa-code"> Emacs</i>
+        <i className="far fa-code" style={iconStyle}></i>
       </span>
       <span style={spaceStyle(6, data)}>
-        <i className="fa fa-terminal"> Term</i>
+        <i className="fa fa-terminal" style={iconStyle}></i>
       </span>
       <span style={spaceStyle(7, data)}>
-        <i className="fab fa-spotify"> Spotify</i>
+        <i className="fab fa-spotify" style={iconStyle}></i>
       </span>
     </span>
   )
 
-  let noChunkwm = (
-    <span style={{...style, opacity: 0.4}}>ChunkWM not installed</span>
-  )
-
-  return workspaces//error ? errorContent : data ? workspaces : noChunkwm
+  return workspaces
 }
 
 export default render
