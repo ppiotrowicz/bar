@@ -42,8 +42,8 @@ const barStyle = {
   overflow: 'hidden',
   color: theme.text,
   height: '25px',
-  fontFamily: 'Iosevka',
-  fontSize: '13px',
+  fontFamily: 'JetBrains Mono',
+  fontSize: '12px',
   boxShadow: '0px 2px 5px 0 #000000',
 }
 
@@ -60,7 +60,20 @@ const result = (data, key) => {
 export const command = `
 BAT=$(pmset -g batt | egrep '([0-9]+\%).*' -o --colour=auto | cut -f1 -d';');
 SPACE=$(echo $(/usr/local/bin/yabai -m query --spaces --space | /usr/local/bin/jq .index));
-SPOTIFY=$(osascript -e 'tell application "System Events"set processList to (name of every process)end tellif (processList contains "Spotify") is true thentell application "Spotify"if player state is playing thenset artistName to artist of current trackset trackName to name of current trackreturn artistName & " - " & trackNameelsereturn ""end ifend tellend if')
+SPOTIFY=$(osascript -e 'tell application "System Events"
+set processList to (name of every process)
+end tell
+if (processList contains "Spotify") is true then
+tell application "Spotify"
+if player state is playing then
+set artistName to artist of current track
+set trackName to name of current track
+return artistName & " - " & trackName
+else
+return ""
+end if
+end tell
+end if')
 
 
 echo $(cat <<-EOF
